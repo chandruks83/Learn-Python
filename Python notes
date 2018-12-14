@@ -1,1 +1,15 @@
-Python notes
+pstr = "HelloWorld"
+
+Strings
+
+Command		Results
+pstr[0]		H
+len(pstr)   10
+pstr[:]		HelloWorld
+pstr[2:]	He
+pstr[:3]	Hel
+pstr[2:5]	llo (Except the last character.ie.,5th character)
+pstr[2:9:2]	lool (Extract every 2nd character from 2nd position till 9th)
+pstr[:-1] 	HelloWorl (Except the last character)
+pstr[::-1]  dlroWolleH (Reverse a string)
+"abc"[0]	a
