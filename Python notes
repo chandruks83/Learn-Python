@@ -13,3 +13,58 @@ pstr[2:9:2]	lool (Extract every 2nd character from 2nd position till 9th)
 pstr[:-1] 	HelloWorl (Except the last character)
 pstr[::-1]  dlroWolleH (Reverse a string)
 "abc"[0]	a
+
+String formatting
+
+print('This is a {}'.format('string'))   				This is a string
+print('This is a {0} {1}'.format('brown', 'fox'))   	This is a brown fox
+print('This is a {b} {f}'.format(b='brown', f='fox'))	This is a brown fox
+
+name = 'Vedanth'
+age = '2'
+print(f'My name is {name}, age is {age}')				My name is Vedanth, age is 2
+
+Float formatting follows "{value:width.precission f}"
+E.g.,	result = 10/7
+		print result									1.4285714285714286
+		print('Result is {r:1.5f}'.format(r=result))	Result is 1.42857
+		
+Lists can contain elements of multiple datatypes
+l1=[1, 'a', 2]
+l2=[2,3]
+l3=l1+l2
+l1.append('b')
+l1=['b', 'a', 'x','z']
+l1.sort()												['a', 'b', 'x', 'z']
+l1[::-1]												['z', 'x', 'b', 'a']
+l1.reverse()											['z', 'x', 'b', 'a']
+l2=[1,2]
+l1.append(l2)
+l1[4][1]												2
+l1.pop													z
+l1.pop(1)												a
+
+Dictionaries are unordered key-value pairs
+dict = {'key1':'value1', 'key2':'value2'}
+e.g.,
+dp =
+{'apple': 100,
+ 'banana': 5,
+ 'veg': {'carrot': 10, 'bean': 20},
+ 'count': [1, 2, 3]}
+dp['apple']												10
+dp['veg']['carrot']										10
+
+Tuples are similar to list with but with 
+common brackets and tuples are immutable
+t=(1,2,3,2)
+t.count(2)												2
+t.index(2)												1
+t=(1,2,[1,2])
+t[2][1]													2
+
+Sets are unordered collection of unique elements
+No duplicates
+s=set()
+s.add(1)
+set('parallel')											{'p', 'a', 'r','l','e'}
