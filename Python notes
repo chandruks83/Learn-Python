@@ -1,7 +1,30 @@
+Dynamic Typing
+--------------
+Python uses dynamic typing, meaning you can reassign variables to different data types. This makes Python very flexible in assigning data types; it differs from other languages that are statically typed.
+
+Determining variable type with type()
+You can check what type of object is assigned to a variable using Python's built-in type() function. Common data types include:
+
+int (for integer)
+float
+str (for string)
+list
+tuple
+dict (for dictionary)
+set
+bool (for Boolean True/False)
+
+Numbers
+---------
+7/4		1.75
+7//4	1
+2**3	8
+4**0.5	2
+
 pstr = "HelloWorld"
 
 Strings
-
+--------
 Command		Results
 pstr[0]		H
 len(pstr)   10
@@ -13,8 +36,27 @@ pstr[2:9:2]	lool (Extract every 2nd character from 2nd position till 9th)
 pstr[:-1] 	HelloWorl (Except the last character)
 pstr[::-1]  dlroWolleH (Reverse a string)
 "abc"[0]	a
+len('abcd')	4
+
+Strings are immutable, this means that once a string is created, the elements within it can not be changed or replaced
+e.g., s='abcd'
+	  s[] = 'z'	  Not possible, will error
+
+s=s+'bcd'		abcdbcd
+s*2				abcdbcdabcdbcd         String multiplication
+
+s='A,B,C,D'
+
+s.upper()
+s.lower()
+s.split(',')
 
 String formatting
+-----------------
+a=10.5
+b=5
+r='rep'
+print('This is a %s %r %1.2f and %d string'%('formatted',r,a,b))		This is a formatted 'rep' 10.50 and 5 string
 
 print('This is a {}'.format('string'))   				This is a string
 print('This is a {0} {1}'.format('brown', 'fox'))   	This is a brown fox
@@ -28,7 +70,9 @@ Float formatting follows "{value:width.precission f}"
 E.g.,	result = 10/7
 		print result									1.4285714285714286
 		print('Result is {r:1.5f}'.format(r=result))	Result is 1.42857
-		
+
+Lists
+---------
 Lists can contain elements of multiple datatypes
 l1=[1, 'a', 2]
 l2=[2,3]
@@ -44,6 +88,8 @@ l1[4][1]												2
 l1.pop													z
 l1.pop(1)												a
 
+Dictionaries
+-------------
 Dictionaries are unordered key-value pairs
 dict = {'key1':'value1', 'key2':'value2'}
 e.g.,
@@ -55,6 +101,8 @@ dp =
 dp['apple']												10
 dp['veg']['carrot']										10
 
+Tuples
+---------
 Tuples are similar to list with but with 
 common brackets and tuples are immutable
 t=(1,2,3,2)
@@ -63,6 +111,8 @@ t.index(2)												1
 t=(1,2,[1,2])
 t[2][1]													2
 
+Sets
+------
 Sets are unordered collection of unique elements
 No duplicates
 s=set()
@@ -70,6 +120,7 @@ s.add(1)
 set('parallel')											{'p', 'a', 'r','l','e'}
 
 File i/o
+---------
 
 with open('myfile.txt', mode='w') as myfile:
     myfile.write('New line')
@@ -88,7 +139,7 @@ Reading, writing and appending modes
 * mode = 'w+' - writing and reading(overwrites existing or creates new)
 
 Control flow
-
+-------------
 a = 2
 b=1
 if a < b :
@@ -155,7 +206,7 @@ for index, letter in enumerate('abc'):					0a 1b 2c
     print(letter)
 
 Useful operators
-
+------------------
 l1=[1,2]												(1, 'a')
 l2=['a', 'b']											(2, 'b')
 l3=zip(l1,l2)
