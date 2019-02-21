@@ -29,7 +29,7 @@ Command		Results
 pstr[0]		H
 len(pstr)   10
 pstr[:]		HelloWorld
-pstr[2:]	He
+pstr[2:]	lloWorld
 pstr[:3]	Hel
 pstr[2:5]	llo (Except the last character.ie.,5th character)
 pstr[2:9:2]	lool (Extract every 2nd character from 2nd position till 9th)
@@ -40,7 +40,7 @@ len('abcd')	4
 
 Strings are immutable, this means that once a string is created, the elements within it can not be changed or replaced
 e.g., s='abcd'
-	  s[] = 'z'	  Not possible, will error
+	  s[0] = 'z'	  Not possible, will error
 
 s=s+'bcd'		abcdbcd
 s*2				abcdbcdabcdbcd         String multiplication
@@ -49,7 +49,34 @@ s='A,B,C,D'
 
 s.upper()
 s.lower()
+s.islower
+s.isupper
 s.split(',')
+s.title() - converts to title case
+s.startswith()
+s.endswith()
+'Hello'.rjust(5,'*') -> *****Hello
+'Hello'.ljust(5,'-') -> Hello-----
+'Hello'.center(5,'=') -> =====Hello=====
+' x '.strip() ->'x'  removes white spaces
+'xyzxy'.strip('xy') -> 'z'        removes the specified characters from both the sides until it reaches unspecified character
+'abcadea'.replace('a','z') ->'zbczdez'
+
+''.join(['a','b','c']) -> abc
+' '.join(['a','b','c']) -> a b c
+','.join(['a','b','c']) -> a,b,c
+'\n'.join(['a','b','c']) -> a
+							b
+							c
+
+Methods returning boolean
+
+isalpha() - letters only
+isalnum() - letters and numbers
+isdecimal() - numbers only
+isspace() - whitespace only
+istitle() - titelcase only
+
 
 String formatting
 -----------------
@@ -70,6 +97,11 @@ Float formatting follows "{value:width.precission f}"
 E.g.,	result = 10/7
 		print result									1.4285714285714286
 		print('Result is {r:1.5f}'.format(r=result))	Result is 1.42857
+		
+place = 'bangalore'
+name = 'sachin'
+'my name is %s and place is %s' %(name, place)
+'my name is sachin and place is bangalore'
 
 Lists
 ---------
@@ -88,6 +120,18 @@ l1[4][1]												2
 l1.pop													z
 l1.pop(1)												a
 
+s=['a','b','c']
+del s[1]
+print(s)
+['a', 'c']
+
+cat = [1,2,3]
+a,b,c=cat
+print(a) --->1
+print(b)--->2
+print(c)--->3
+
+
 Dictionaries
 -------------
 Dictionaries are unordered key-value pairs
@@ -100,6 +144,15 @@ dp =
  'count': [1, 2, 3]}
 dp['apple']												10
 dp['veg']['carrot']										10
+
+Methods :
+keys()
+values()
+items()
+get()
+setdefault()
+pprint()
+pformat()
 
 Tuples
 ---------
@@ -204,6 +257,13 @@ for index in enumerate('abc'):							(0, 'a')
 for index, letter in enumerate('abc'):					0a 1b 2c
     print(index)
     print(letter)
+	
+for i in ['a', 'b','c']:
+	print(i)
+
+a
+b
+c
 
 Useful operators
 ------------------
@@ -270,3 +330,146 @@ farhenheit = [((9/5)*temp) for temp in celcius]			[0.0, 18.0, 36.0, 62.1]
 
 [x*y for x in [2,3,4] for y in [10,20,30]]				[20, 40, 60, 30, 60, 90, 40, 80, 120]
 
+Functions
+--------------------------------------------
+
+def LesserEven(a,b):
+    if (a%2 == 0 and b%2==0):
+        return min(a,b)
+    else:
+        return max(a,b)
+
+print(LesserEven(1,2))
+
+def old_macdonald(a):
+       return ''.join([x.upper() if (a.index(x)==0 or a.index(x)==3) else x for x in a])
+	   
+map(methodname, paramter to the method) : will return the outputs of the method passed
+	def square(num):
+		return num**2
+	
+	n = [1,2,3]
+	list(map(square, n))	-------> [1, 4, 9]
+	
+	for item in map(square,n):
+    print(item)             -------> 1, 4, 9
+
+Filter function
+	def checkEven(num):
+		return num%2 == 0
+	
+	n = [1,2,3,4,5,6,7,8]
+	for item in filter(checkEven,n):
+		print(item)
+	list(filter(checkEven,n)) 			-------------->  2 4 6 8 
+														[2, 4, 6, 8]
+
+Lambda expressions :
+	n = [2,3,4,5]
+	list(map(lambda num : num**2, n)) -------------> [4, 9, 16, 25]
+	
+	For each number in n labda expression will return the square of it
+	
+
+Try except:
+
+print('How many cats do u have?')
+n = input()
+try:
+    if int(n) >= 4:
+        print('You have lot of cats')
+    else:
+        print('You have less cats')
+except ValueError:
+    print('Catch value error')
+
+Conversion functions
+
+	* int('42') -->42
+	* str(42)	-->'42'	
+	* List('Hello') --> ['H','e','l','l','o']
+	
+In and not in
+
+	* 42 in [1,2,42] --->True
+	* 42 not in [1,2,42] --->False
+
+Multiple assignments
+
+a = 'aa'
+b = 'bb'
+
+a,b = b,a
+print(a) ----> 'bb'
+print(b) ----> 'aa'
+
+Range function :
+	Range() function returns a list like value, which can be passed to list() to get the actual values
+
+	list(range(0,3))
+[0, 1, 2]
+
+Simplify sorting :
+
+c='zxcvasdfsd'
+d=list(c)
+d.sort()
+print(d)
+['a', 'c', 'd', 'd', 'f', 's', 's', 'v', 'x', 'z']
+
+Sorting happens in ASCII-betical order, meaning Capital letters gets more priority than small
+i.e.,
+
+c = ['a','b','A', 'Z']
+c.sort()
+print(c)
+['A', 'Z', 'a', 'b']
+c.sort(key=str.lower)
+print(c)
+['A', 'a', 'b', 'Z']
+
+Reverse sorting
+d.sort(reverse=true)
+
+** Difference between "del" and "remove"
+cat = [0, 1, 2, 3]
+del cat[0]
+print(cat)
+[1, 2, 3]
+cat.remove(1)
+print(cat)
+[2, 3]
+
+Lists are accessed by their references
+
+def eggs(cheese):
+    cheese.append('Hello')
+
+spam=[1,2,3]
+eggs(spam)
+print(spam) ------>[1, 2, 3, 'Hello']
+
+To have a copy of a list
+
+import copy
+spam=[1,2,3]
+cheese = copy.deepcopy(spam)
+cheese[0]=0
+print(cheese)
+[0, 2, 3]
+print(spam)
+[1, 2, 3]
+
+Line continuation character (\) can be used to stretch python instructions to multiple lines
+print('This is an example of '+ \
+  'a line strech')
+This is an example of a line strech
+
+Commenting multiple lines if code/Strings
+	Use triple quotes(''' ''') for multi line commenting, it will also escape the special characters in the code
+
+Escape characters
+	"To escape 'apostrophe' use double quotes"
+	e.g., "This is Python's doc"
+Also using backslash characters can be escaped
+e.g., \' (Single quote), \" (Double quote), \t (tab), \n (newline), \\ (Backslash)
