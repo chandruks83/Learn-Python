@@ -473,3 +473,35 @@ Escape characters
 	e.g., "This is Python's doc"
 Also using backslash characters can be escaped
 e.g., \' (Single quote), \" (Double quote), \t (tab), \n (newline), \\ (Backslash)
+
+
+Run python scripts without any ide
+	Shebangline #! python3
+	
+Running program from commandline
+@py C:\Users\Chandru\git\Learn-Python\PythonScripts\ShebangLine.py %*
+@pause
+
+@py - Not to show anything it follows i.e., ignore C:\Users\Chandru\git\Learn-Python\PythonScripts\ShebangLine.py in cmdline
+%*  - Take arguments from commandline and pass to python script
+
+Running from a batch file
+	* create a batch file with the above contents(Running program from commandline)
+	* Add the parent folder of this batch to environment variable path
+	* Just type the batch file name from 'run' dialog
+	* Pass the arguments to python by placing after the batch file name (eg. rpy arg1 arg2 arg3)
+	* Retrieve these arguments using import sys, sys.argv
+	
+Regular expressions
+#Regular expression
+str1 = "My Phone number is +91-9889889889 \
+           Shilpa's number +91-9986998699"
+import re
+getphone = re.compile(r'\+\d\d\-\d\d\d\d\d\d\d\d\d\d')
+phone = getphone.search(str1)
+#Search for one element
+print(phone.group())
+
+#Search for all the elements
+print(getphone.findall(str1))
+
