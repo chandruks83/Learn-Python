@@ -501,18 +501,36 @@ getphone = re.compile(r'\+\d\d\-\d\d\d\d\d\d\d\d\d\d')
 phone = getphone.search(str1)
 #Search for one element
 print(phone.group())
+#output : +91-9889889889
 
 #Search for all the elements
 print(getphone.findall(str1))
+#output : ['+91-9889889889', '+91-9986998699']
 
-#Grouping of strings
+#Grouping of strings using brackets
 getphone = re.compile(r'\+(\d\d)\-(\d\d\d\d\d\d\d\d\d\d)')
 phone = getphone.search(str1)
 print(phone.group(1))
 print(phone.group(2))
+#output : 91
+9889889889
 
-#using pipe character
+#using pipe character, match any one of the strings
 regexWithpipe = re.compile(r'Bat(man|mobile|woman)')
 mo = regexWithpipe.search('Batwoman came to rescue and Batman followed')
 print(mo.group())
+#output : Batwoman
 
+#match 0 or one time using ?
+regexp = re.compile(r'Bat(wo)?man')
+mo = regexp.search('I am a Batman with a Batwoman')
+print(mo.group())
+#output : Batman
+
+rx = re.compile(r'(\d\d-)?\d\d\d\d\d\d\d\d\d\d')
+mo = rx.search('91-9886688660')
+print(mo.group())
+mo = rx.search('9886688660')
+print(mo.group())
+#output : 91-9886688660
+9886688660
