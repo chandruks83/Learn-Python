@@ -686,3 +686,17 @@ shutil.rmtree(r'F:\Uttara\Python\NewFolder1\NewFolder')   #Remove folder and all
 
 import os
 os.unlink(r'F:\Uttara\Python\NewFolder1\Hello.txt')   #Remove file
+
+*****Accessing all the subfolders and files in a folder using os.walk
+
+import os
+for folder, subfolders, filenames in os.walk(r'F:\Uttara\Eclipse_Workspace'):
+	print('Folder is ' + folder)
+	print('subfolders in ' + folder + ' are ' + str(subfolders))
+	print('files in ' + folder + ' are ' + str(filenames))
+	print()
+	
+***Zip file operations
+import zipfile
+zf = zipfile.ZipFile(r'F:\Uttara\Python\NewFolder2\NewFolder1.zip')
+zf.extractall(r'F:\Uttara\Python\NewFolder2\New folder')
