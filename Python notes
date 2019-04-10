@@ -371,6 +371,8 @@ Lambda expressions :
 	For each number in n labda expression will return the square of it
 	
 
+Exception handling :
+
 Try except:
 
 print('How many cats do u have?')
@@ -700,3 +702,17 @@ for folder, subfolders, filenames in os.walk(r'F:\Uttara\Eclipse_Workspace'):
 import zipfile
 zf = zipfile.ZipFile(r'F:\Uttara\Python\NewFolder2\NewFolder1.zip')
 zf.extractall(r'F:\Uttara\Python\NewFolder2\New folder')
+
+Logging :
+
+import logging
+logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', filename='log.txt', filemode='w', level=logging.DEBUG)
+#To disable logging
+#logging.disable(logging.CRITICAL)
+a = 5
+logging.debug('value of a is %d' %(a))
+b = 10
+logging.debug('value of b is %d' %(b))
+sum = a + b
+logging.debug('sum of a and b is %d' %(sum))
+
