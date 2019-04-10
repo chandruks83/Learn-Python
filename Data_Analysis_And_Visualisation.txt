@@ -1,0 +1,25 @@
+***************************************************************Data analysis and visualisation***************************************************************
+
+1. Creating arrays
+
+import numpy as np
+list1 = [1,2,3]
+arrayList = np.array(list1)
+print(arrayList)
+>>[1 2 3]
+
+list2 = [11,22,33]
+list3 = [list1, list2]
+arrayList1 = np.array(list3)
+print(arrayList1)
+>>[[ 1  2  3]
+	[11 22 33]]
+ 
+np.shape(arrayList1)
+>>(2, 3)
+
+np.arrange(5)
+>>[0 1 2 3 4]
+
+np.arange(2, 20,2)
+>>[ 2,  4,  6,  8, 10, 12, 14, 16, 18]
