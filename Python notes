@@ -716,3 +716,7 @@ logging.debug('value of b is %d' %(b))
 sum = a + b
 logging.debug('sum of a and b is %d' %(sum))
 
+Gui automation
+pip install pyautogui
+* with this module keyboard and mouse operations can be performed
+* Screenshots can also be taken using this module
