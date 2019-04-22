@@ -156,7 +156,7 @@ pformat()
 
 Tuples
 ---------
-Tuples are similar to list with but with 
+Tuples are similar to list but with 
 common brackets and tuples are immutable
 t=(1,2,3,2)
 t.count(2)												2
@@ -352,7 +352,7 @@ map(methodname, paramter to the method) : will return the outputs of the method 
 	list(map(square, n))	-------> [1, 4, 9]
 	
 	for item in map(square,n):
-    print(item)             -------> 1, 4, 9
+		print(item)             -------> 1, 4, 9
 
 Filter function
 	def checkEven(num):
@@ -368,7 +368,7 @@ Lambda expressions :
 	n = [2,3,4,5]
 	list(map(lambda num : num**2, n)) -------------> [4, 9, 16, 25]
 	
-	For each number in n labda expression will return the square of it
+	For each number in n lambda expression will return the square of it
 	
 
 Exception handling :
@@ -419,6 +419,10 @@ d.sort()
 print(d)
 ['a', 'c', 'd', 'd', 'f', 's', 's', 'v', 'x', 'z']
 
+Sort : 
+sort method modifies the original list
+sorted method returns a new list
+
 Sorting happens in ASCII-betical order, meaning Capital letters gets more priority than small
 i.e.,
 
@@ -429,6 +433,12 @@ print(c)
 c.sort(key=str.lower)
 print(c)
 ['A', 'a', 'b', 'Z']
+
+To sort integer list as int
+l1 = ['1007', '1022', '990']
+l1.sort(key=int)
+print(l1)
+['990', '1007', '1022']
 
 Reverse sorting
 d.sort(reverse=true)
@@ -720,3 +730,11 @@ Gui automation
 pip install pyautogui
 * with this module keyboard and mouse operations can be performed
 * Screenshots can also be taken using this module
+
+glob module : 
+>>> import glob
+>>> glob.glob('*.py')
+['Args_Kwargs.py', 'Assert.py', 'Logging.py', 'OSWalk.py', 'WebScrapping.py']
+
+>>> glob.glob('**/*.py',recursive=True)
+['Python\\Args_Kwargs.py', 'Python\\Assert.py', 'Python\\Logging.py', 'Python\\OSWalk.py', 'Python\\WebScrapping.py', 'Python\\NewFolder1\\WebScrapping.py', 'Python\\NewFolder2\\WebScrapping.py', 'Python\\NewFolder2\\New folder\\NewFolder1\\WebScrapping.py']

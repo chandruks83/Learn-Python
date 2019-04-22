@@ -23,3 +23,5 @@ np.arrange(5)
 
 np.arange(2, 20,2)
 >>[ 2,  4,  6,  8, 10, 12, 14, 16, 18]
+
+Indexing arrays
