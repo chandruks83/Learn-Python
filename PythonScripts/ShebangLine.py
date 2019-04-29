@@ -1,5 +1,21 @@
 #! python3
-# To run python scripts without any ide
+import os
 import sys
-l = sys.argv
-print(l[1] , l[2], l[3])
+import logging
+import time
+
+logFile = os.path.basename(sys.argv[0])[:-3]
+logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', filename=logFile + '.txt', filemode='w', level=logging.DEBUG)
+
+time.sleep(2)
+a = 5
+print('a = %s' %(a))
+logging.debug('value of a is %d' %(a))
+time.sleep(2)
+b = 10
+print('b = %s' %(b))
+logging.debug('value of b is %d' %(b))
+time.sleep(2)
+sum = a + b
+print('a + b = %s' %(sum))
+logging.debug('sum of a and b is %d' %(sum))

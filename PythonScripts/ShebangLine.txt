@@ -1,0 +1,3 @@
+2019-04-25 21:26:57,487 - DEBUG - value of a is 5
+2019-04-25 21:26:59,487 - DEBUG - value of b is 10
+2019-04-25 21:27:01,488 - DEBUG - sum of a and b is 15

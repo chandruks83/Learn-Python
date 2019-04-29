@@ -738,3 +738,6 @@ glob module :
 
 >>> glob.glob('**/*.py',recursive=True)
 ['Python\\Args_Kwargs.py', 'Python\\Assert.py', 'Python\\Logging.py', 'Python\\OSWalk.py', 'Python\\WebScrapping.py', 'Python\\NewFolder1\\WebScrapping.py', 'Python\\NewFolder2\\WebScrapping.py', 'Python\\NewFolder2\\New folder\\NewFolder1\\WebScrapping.py']
+
+To launch any application
+os.system(r'start F:\Winium\Winium.Desktop.Driver\Winium.Desktop.Driver.exe')
