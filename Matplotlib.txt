@@ -1,0 +1,11 @@
+import matplotlib.pyplot as plt
+x = [1,2,3]
+y = [1,2,3]
+z = [3,2,1]
+plt.plot(x,y)
+plt.plot(x,z)
+plt.title('Test graph')
+plt.xlabel('xaxis', fontsize='20')
+plt.ylabel('yaxis')
+plt.legend(['this is y', 'this is z'])
+plt.show()
