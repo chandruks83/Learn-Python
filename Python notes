@@ -649,8 +649,6 @@ os.listdir(r'F:\Uttara\Python')
 os.getcwd()
 'C:\\Users\\Chandru\\AppData\\Local\\Programs\\Python\\Python37'
 os.chdir(r'F:\Uttara\Python')
-os.getcwd()
-'F:\\Uttara\\Python'
 
 Reading and writing into files
 
@@ -742,3 +740,28 @@ glob module :
 To launch any application
 os.system(r'start F:\Winium\Winium.Desktop.Driver\Winium.Desktop.Driver.exe')
 
+*Args and **kwargs : multiple arguments and kwyword arguments
+As the name says *args will take multiple parameters as function arguments(tuples) and **kwargs take keyword parameters as arguments(dictionary)
+
+def exampleArgsKwargs(*args, **kwargs):
+    print(args, kwargs)
+    print('i have {} {}'.format(args[0], kwargs['fruits']))
+
+exampleArgsKwargs(10,20,30, fruits='apples', veggie = 'lettuce')
+
+output : 
+(10, 20, 30) {'fruits': 'apple', 'veggie': 'lettuce', 'food': 'eggs'}
+i have 10 apple
+
+What is NumPy?
+NumPy stands for ‘Numerical Python’ or ‘Numeric Python’. It is an open source module of Python which provides fast mathematical computation on arrays and matrices
+
+Pandas ?
+Pandas is a popular Python package for data science, and with good reason: it offers powerful, expressive and flexible data structures that make data manipulation and analysis easy, among many other things. The DataFrame is one of these structures.
+
+pip help commands:
+pip help install - Details of install command
+pip search numpy - installation details of a package (eg numpy)
+pip list -o - List of outdated packages
+pip freeze - Output installed packages in requirements format
+pip install -r D:\Uttara\Python\RequirementsFile.txt - install packages from a requirements file
